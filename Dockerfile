@@ -1,6 +1,18 @@
 FROM ubuntu:15.10
+
+#Install neovim
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
 RUN DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:neovim-ppa/unstable
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install neovim
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y neovim curl git
+
+#Install plugins
+RUN mkdir -p ~/.config/nvim/autoload ~/.config/nvim/bundle && \
+	curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+RUN git clone https://github.com/benekastah/neomake.git \
+	/root/.config/nvim/bundle/neomake/
+
+#Install config
+ADD config/vimrc /root/.config/nvim/init.vim
