@@ -14,6 +14,9 @@ RUN mkdir -p ~/.config/nvim/autoload ~/.config/nvim/bundle && \
 RUN git clone https://github.com/benekastah/neomake.git \
 	/root/.config/nvim/bundle/neomake/
 
+RUN git clone git://github.com/airblade/vim-gitgutter.git \
+	/root/.config/nvim/bundle/vim-gitgutter
+
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 #Install config
