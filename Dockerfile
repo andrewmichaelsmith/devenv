@@ -17,6 +17,9 @@ RUN git clone https://github.com/benekastah/neomake.git \
 RUN git clone git://github.com/airblade/vim-gitgutter.git \
 	/root/.config/nvim/bundle/vim-gitgutter
 
+RUN git clone git://github.com/tpope/vim-fugitive.git \
+	/root/.config/nvim/bundle/vim-fugitive
+
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 #Install config
