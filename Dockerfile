@@ -21,3 +21,8 @@ ADD config/vimrc /root/.config/nvim/init.vim
 
 #For python
 RUN pip install pylint
+
+
+#For jshint (I need nodejs AND npm :-()
+RUN apt-get install -y npm nodejs nodejs-legacy
+RUN npm install -g jshint
