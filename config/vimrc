@@ -1,10 +1,24 @@
-execute pathogen#infect()
+set hlsearch
+set textwidth=80
+set incsearch
+set smartcase
+set modeline
+set ls=2
+set shiftwidth=4
+set tabstop=4
+set nocompatible
+set hidden
+set noswapfile
 
-filetype plugin indent on
-syntax on
 
-autocmd! BufWritePost * Neomake
+call plug#begin('~/.vim/plugged')
+Plug 'w0rp/ale'
+Plug 'kien/ctrlp.vim'
+call plug#end()
 
-" fzf
-set rtp+=~/.fzf
-nnoremap <c-p> :FZF<cr>
+
+"kien/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_working_path_mode = 0
+

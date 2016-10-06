@@ -1,23 +1,30 @@
-FROM ubuntu:15.10
+FROM ubuntu:16.04
+RUN apt-get update && apt-get upgrade -y
 
-#Install neovim
-RUN DEBIAN_FRONTEND=noninteractive apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
-RUN DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:neovim-ppa/unstable
-RUN DEBIAN_FRONTEND=noninteractive apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y neovim curl git python python-pip
+## Core ##
+RUN apt-get install -y git build-essential curl
 
-#NeoVim plugins
-RUN mkdir -p ~/.config/nvim/autoload ~/.config/nvim/bundle && \
-	curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+## PYTHON2 Setup ##
+RUN apt-get install -y python-pip
+RUN pip install pylint && pip install --upgrade pip
 
-RUN git clone https://github.com/benekastah/neomake.git \
-	/root/.config/nvim/bundle/neomake/
+## VIM Setup ##
+RUN apt-get install -y ncurses-dev
 
-RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
+RUN cd /tmp && \
+	git clone https://github.com/vim/vim.git && \
+	cd vim && \
+	make && \
+	make install && \
+	cd ~ && \
+	rm -rf /tmp/vim/
 
-#Install config
-ADD config/vimrc /root/.config/nvim/init.vim
+RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-#For python
-RUN pip install pylint
+ADD config/vimrc /root/.vimrc
+RUN vim -c ":PlugInstall | :qa"
+
+
+
+CMD vim
