@@ -14,6 +14,10 @@ set noswapfile
 call plug#begin('~/.vim/plugged')
 Plug 'w0rp/ale'
 Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'elzr/vim-json'
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 
