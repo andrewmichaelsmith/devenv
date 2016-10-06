@@ -7,6 +7,7 @@ RUN apt-get install -y git build-essential curl
 ## PYTHON2 Setup ##
 RUN apt-get install -y python-pip
 RUN pip install pylint && pip install --upgrade pip
+RUN pip install flake8
 
 ## VIM Setup ##
 RUN apt-get install -y ncurses-dev
