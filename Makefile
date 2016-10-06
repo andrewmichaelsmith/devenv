@@ -2,5 +2,5 @@ build:
 	docker build -t dev .
 
 run:
-	docker run --rm -v `pwd`:/vol --workdir=/vol -ti dev 
+	docker run --rm -v ${HOME}:${HOME} --workdir=${HOME} -ti dev 
 
