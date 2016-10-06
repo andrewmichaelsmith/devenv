@@ -24,6 +24,7 @@ RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ADD config/vimrc /root/.vimrc
+ADD config/after-ftplugin-python.vim /root/.vim/after/ftplugin/python.vim
 RUN vim -c ":PlugInstall | :qa"
 
 RUN mkdir -p /root/.config/
