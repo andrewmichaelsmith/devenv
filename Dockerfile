@@ -26,6 +26,9 @@ RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ADD config/vimrc /root/.vimrc
 RUN vim -c ":PlugInstall | :qa"
 
+RUN mkdir -p /root/.config/
+ADD config/flake8 /root/.config/flake8
+
 
 
 CMD vim
