@@ -1,6 +1,4 @@
 # devenv
 
-Using with tmux requires: https://github.com/neovim/neovim/wiki/Troubleshooting#esc-in-tmux-or-gnu-screen-is-delayed
-
-    set -g escape-time 10
+    docker run --rm -v $HOME:$HOME --workdir=$HOME quay.io/andysmith/devenv              
 
