@@ -1,3 +1,5 @@
+filetype off
+      
 set hlsearch
 set textwidth=80
 set incsearch
@@ -8,13 +10,10 @@ set hidden
 set noswapfile
 set backspace=2
 
-set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set noexpandtab " use tabs not spaces
-set nosmarttab " insert tabs on the start of a line according to shiftwidth, not tabstop
 
-
+set expandtab
 
 call plug#begin('~/.vim/plugged')
 Plug 'w0rp/ale'
