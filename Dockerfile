@@ -4,10 +4,10 @@ RUN apt-get update && apt-get upgrade -y
 ## Core ##
 RUN apt-get install -y git build-essential curl
 
-## PYTHON2 Setup ##
-RUN apt-get install -y python-pip
-RUN pip install pylint && pip install --upgrade pip
-RUN pip install flake8
+## PYTHON3 Setup ##
+RUN apt-get install -y python3-pip
+RUN pip3 install pylint && pip3 install --upgrade 
+RUN pip3 install flake8
 
 ## VIM Setup ##
 RUN apt-get install -y ncurses-dev
