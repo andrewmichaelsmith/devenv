@@ -32,4 +32,4 @@ ADD config/flake8 /root/.config/flake8
 
 
 
-CMD vim
+ENTRYPOINT ["vim"]
