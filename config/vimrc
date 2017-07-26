@@ -22,6 +22,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'elzr/vim-json'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
+Plug 'fisadev/vim-isort'
+
 
 call plug#end()
 

@@ -7,10 +7,10 @@ ADD config/after-ftplugin-python.vim /root/.vim/after/ftplugin/python.vim
 ADD config/flake8 /root/.config/flake8
 
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y vim git build-essential curl && \
+    apt-get install -y vim git build-essential curl python-isort && \
     apt-get install -y python3-pip && \
     pip3 install pylint && pip3 install --upgrade  && \
-    pip3 install flake8 && \
+    pip3 install flake8 isort && \
     apt-get install -y ncurses-dev && \
     rm -rf /var/lib/apt/lists/* && \
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
