@@ -23,6 +23,7 @@ Plug 'elzr/vim-json'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'fisadev/vim-isort'
+Plug 'tell-k/vim-autopep8'
 
 
 call plug#end()
