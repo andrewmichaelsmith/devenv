@@ -16,21 +16,16 @@ set softtabstop=4
 set expandtab
 
 call plug#begin('~/.vim/plugged')
-Plug 'w0rp/ale'
-Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'elzr/vim-json'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
+Plug 'elzr/vim-json'
 Plug 'fisadev/vim-isort'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'tell-k/vim-autopep8'
-
+Plug 'tpope/vim-fugitive'
+Plug 'w0rp/ale'
 
 call plug#end()
 
-
-"kien/ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_working_path_mode = 0
-
+nnoremap <C-p> :FZF<CR>
