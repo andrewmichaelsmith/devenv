@@ -9,6 +9,7 @@ RUN apt-get update && apt-get upgrade -y && \
 
 RUN mkdir -p /root/.config/
 ADD config/vimrc /root/.vimrc
+ADD config/flake8 /root/.config/flake8
 ADD config/after-ftplugin-python.vim /root/.vim/after/ftplugin/python.vim
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
