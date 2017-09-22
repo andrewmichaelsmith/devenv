@@ -29,3 +29,6 @@ Plug 'w0rp/ale'
 call plug#end()
 
 nnoremap <C-p> :FZF<CR>
+
+autocmd BufWritePre *.py :call Autopep8()<CR>
+let g:autopep8_disable_show_diff=1  
