@@ -22,7 +22,7 @@ Plug 'elzr/vim-json'
 Plug 'fisadev/vim-isort'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'tell-k/vim-autopep8'
+Plug 'Chiel92/vim-autoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
 
@@ -30,5 +30,5 @@ call plug#end()
 
 nnoremap <C-p> :FZF<CR>
 
-autocmd BufWritePre *.py :call Autopep8()<CR>
+au BufWrite *.py :Autoformat
 let g:autopep8_disable_show_diff=1  
